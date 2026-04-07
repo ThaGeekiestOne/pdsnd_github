@@ -113,12 +113,12 @@ def trip_duration_stats(df):
     total_seconds = df['Trip Duration'].sum()
     mean_seconds  = df['Trip Duration'].mean()
     # Formatting total as hours / minutes / seconds
-    total_h = int(total_seconds // 3600)
-    total_m = int((total_seconds % 3600) // 60)
+    total_hour = int(total_seconds // 3600)
+    total_minutes = int((total_seconds % 3600) // 60)
     total_s = int(total_seconds % 60)
     mean_m = int(mean_seconds // 60)
     mean_s = int(mean_seconds % 60)
-    print(f'  Total Travel Time : {total_h}h {total_m}m {total_s}s')
+    print(f'  Total Travel Time : {total_hour}h {total_minutes}m {total_s}s')
     print(f'  Mean Travel Time  : {mean_m}m {mean_s}s')
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
@@ -156,7 +156,9 @@ def display_raw_data(df):
     indix = 0
     while True:
         show = input('\nWanna see 10 more rows of raw data? Enter yes or no.\n').strip().lower()
-        if show != 'yes':
+        if show == 'yes':
+            continue
+        elif show=='no':
             break
         print(df.iloc[indix: indix + 10].to_string())
         indix += 10
