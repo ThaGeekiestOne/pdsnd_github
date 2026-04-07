@@ -1,4 +1,4 @@
-#libs imports
+#importing the libraries
 import time
 import pandas as pd
 import numpy as np
@@ -19,7 +19,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
 
-    # city inpt
+    # city input
     while True:
         city = input('\nHey there so choose a city you would like to explore? '
                      '(chicago, new york city, washington)\n').strip().lower()
@@ -27,7 +27,7 @@ def get_filters():
             break
         print('  You sure its not a typo, Kindly Enter from chicago, new york city, or washington.')
 
-    # month inpt
+    # month input
     while True:
         month = input('\nWhich month would you like to filter by? '
                       '(all, january, february, march, april, may, june)\n').strip().lower()
@@ -35,7 +35,7 @@ def get_filters():
             break
         print('  Wrong input . Kindly Enter a month between january–june, or "all".')
 
-    # day inpt
+    # day input
     while True:
         day = input('\nWhich day of the week would you like to filter by? '
                     '(all, monday, tuesday, wednesday, thursday, friday, saturday, sunday)\n').strip().lower()
