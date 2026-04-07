@@ -156,7 +156,9 @@ def display_raw_data(df):
     indix = 0
     while True:
         show = input('\nWanna see 10 more rows of raw data? Enter yes or no.\n').strip().lower()
-        if show != 'yes':
+        if show == 'yes':
+            continue
+        elif show=='no':
             break
         print(df.iloc[indix: indix + 10].to_string())
         indix += 10
